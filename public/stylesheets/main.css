@@ -1,7 +1,7 @@
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 36px; }
+  margin-bottom: 32px; }
   .input-wrapper .password-input {
     position: relative;
     display: flex;
@@ -24,6 +24,10 @@
     padding: 0 48px 0 16px;
     opacity: 0.4;
     transition: all 0.3s; }
+    @media (min-width: 900px) {
+      .input-wrapper input {
+        height: 48px;
+        padding: 0 14px; } }
     .input-wrapper input::-webkit-input-placeholder, .input-wrapper input::-moz-placeholder, .input-wrapper input:-ms-input-placeholder, .input-wrapper input:-moz-placeholder {
       color: #cccccc; }
     .input-wrapper input:hover, .input-wrapper input:focus, .input-wrapper input:active {
@@ -42,6 +46,9 @@
   outline: none;
   transition: all 0.3s;
   cursor: pointer; }
+  @media (min-width: 900px) {
+    .checkbox-input {
+      margin-right: 12px; } }
   .checkbox-input:checked {
     background-color: #4c8afe;
     border-color: #4c8afe; }
@@ -81,6 +88,10 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: #333; }
+  body h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal; }
   body p {
     margin: 0;
     font-size: 16px; }
@@ -92,67 +103,136 @@ body {
 
 body {
   margin: 0; }
-  body .register-page .form-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%; }
-    body .register-page .form-section header {
-      border-bottom: 1px solid #e6e6e6;
-      padding: 20px 32px;
-      text-align: right; }
-      body .register-page .form-section header img {
-        height: 24px;
-        width: 75px;
-        object-fit: contain; }
-    body .register-page .form-section .form-wrapper {
+  body .register-page {
+    display: flex; }
+    @media (min-width: 900px) {
+      body .register-page {
+        height: 100vh;
+        min-height: 750px; } }
+    body .register-page .image-section {
       display: flex;
       flex-direction: column;
-      align-self: center;
-      height: 100%;
-      max-width: 560px;
-      padding: 0 24px 32px; }
-      body .register-page .form-section .form-wrapper form {
+      align-items: flex-end;
+      justify-content: flex-end;
+      text-align: right;
+      width: 45%;
+      background-image: url(../imgs/bg-login.png);
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 40px;
+      position: relative; }
+      @media (max-width: 899px) {
+        body .register-page .image-section {
+          display: none; } }
+      body .register-page .image-section h2 {
+        max-width: 368px;
+        margin-bottom: 8px; }
+      body .register-page .image-section h2,
+      body .register-page .image-section p {
+        z-index: 1; }
+      body .register-page .image-section .name {
+        margin-bottom: 4px;
+        font-weight: bold; }
+      body .register-page .image-section .shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.5) 69%, rgba(0, 0, 0, 0.8) 96%); }
+    body .register-page .form-section {
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      @media (min-width: 900px) {
+        body .register-page .form-section {
+          width: 55%; } }
+      body .register-page .form-section header {
+        border-bottom: 1px solid #e6e6e6;
+        padding: 20px 32px;
+        text-align: right; }
+        @media (min-width: 900px) {
+          body .register-page .form-section header {
+            padding: 16px 32px; } }
+        body .register-page .form-section header img {
+          height: 24px;
+          width: 75px;
+          object-fit: contain; }
+      body .register-page .form-section .form-wrapper {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        flex-grow: 1;
-        padding: 80px 0; }
-        body .register-page .form-section .form-wrapper form .form-title {
-          margin-bottom: 8px; }
-        body .register-page .form-section .form-wrapper form .form-description {
-          margin-bottom: 24px;
-          color: #8f8f8f; }
-        body .register-page .form-section .form-wrapper form .privacy-policy {
+        align-self: center;
+        height: 100%;
+        max-width: 560px;
+        padding: 0 24px 32px; }
+        @media (min-width: 900px) {
+          body .register-page .form-section .form-wrapper {
+            max-width: 320px;
+            padding: 0 0 40px; } }
+        body .register-page .form-section .form-wrapper form {
           display: flex;
-          align-items: center;
-          margin-bottom: 40px;
-          border-radius: 3px;
-          border: solid 1px #e6e6e6;
-          padding: 16px;
-          color: #cccccc; }
-        body .register-page .form-section .form-wrapper form button {
-          height: 56px;
-          width: 100%;
-          margin: 0 auto;
-          border-radius: 3px;
-          border: none;
-          appearance: none;
-          background-color: #4c8afe;
-          font-size: 16px;
-          font-weight: bold;
-          color: #fff;
-          position: relative;
-          cursor: pointer; }
-          body .register-page .form-section .form-wrapper form button .icon {
-            background-color: #fff;
-            position: absolute;
-            height: 100%;
-            top: 0;
-            left: 32px; }
-          body .register-page .form-section .form-wrapper form button:focus {
-            outline: none; }
-      body .register-page .form-section .form-wrapper footer {
-        border-top: 1px solid #e6e6e6;
-        padding-top: 16px;
-        text-align: center;
-        color: #8f8f8f; }
+          flex-direction: column;
+          justify-content: center;
+          flex-grow: 1;
+          padding: 80px 0; }
+          @media (min-width: 900px) {
+            body .register-page .form-section .form-wrapper form {
+              padding: 0; } }
+          @media (min-width: 900px) {
+            body .register-page .form-section .form-wrapper form .form-title,
+            body .register-page .form-section .form-wrapper form .form-description {
+              text-align: center; } }
+          body .register-page .form-section .form-wrapper form .form-title {
+            margin-bottom: 8px; }
+          body .register-page .form-section .form-wrapper form .form-description {
+            margin-bottom: 24px;
+            color: #8f8f8f; }
+          @media (min-width: 900px) {
+            body .register-page .form-section .form-wrapper form .cpf-nasc {
+              display: grid;
+              grid-template-columns: repeat(12, 1fr);
+              column-gap: 24px; } }
+          body .register-page .form-section .form-wrapper form .cpf-nasc .input-wrapper {
+            grid-column: span 6; }
+          body .register-page .form-section .form-wrapper form .privacy-policy {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-radius: 3px;
+            border: solid 1px #e6e6e6;
+            padding: 16px;
+            color: #cccccc; }
+            @media (min-width: 900px) {
+              body .register-page .form-section .form-wrapper form .privacy-policy {
+                margin-bottom: 40px;
+                padding: 8px 4px 8px 12px; } }
+          body .register-page .form-section .form-wrapper form button {
+            height: 56px;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 3px;
+            border: none;
+            appearance: none;
+            background-color: #4c8afe;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            position: relative;
+            cursor: pointer; }
+            @media (min-width: 900px) {
+              body .register-page .form-section .form-wrapper form button {
+                height: 48px; } }
+            body .register-page .form-section .form-wrapper form button .icon {
+              background-color: #fff;
+              position: absolute;
+              height: 100%;
+              top: 0;
+              left: 32px; }
+            body .register-page .form-section .form-wrapper form button:focus {
+              outline: none; }
+        body .register-page .form-section .form-wrapper footer {
+          border-top: 1px solid #e6e6e6;
+          padding-top: 16px;
+          text-align: center;
+          color: #8f8f8f; }
