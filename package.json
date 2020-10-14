@@ -1,11 +1,18 @@
 {
-  "name": "desafio-bcredi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT"
+	"name": "desafio-bcredi",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build-css": "node-sass --include-path scss public/stylesheets/main.scss public/stylesheets/main.css",
+		"watch-css": "nodemon -e scss -x 'npm run build-css'",
+		"start": "npm run watch-css"
+	},
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"node-sass": "^4.14.1",
+		"nodemon": "^2.0.5"
+	}
 }

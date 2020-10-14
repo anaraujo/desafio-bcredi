@@ -1,0 +1,26 @@
+@import 'variables';
+
+body {
+	font-family: Arial, sans-serif;
+
+	h1 {
+		margin: 0;
+		font-size: 24px;
+		font-weight: bold;
+		color: $dark_gray;
+	}
+
+	p {
+		margin: 0;
+		font-size: 16px;
+	}
+
+	.link-wrapper {
+		font-size: 14px;
+
+		a {
+			text-decoration: none;
+			color: $main_blue;
+		}
+	}
+}

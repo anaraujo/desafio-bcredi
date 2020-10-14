@@ -1,0 +1,24 @@
+@import 'variables';
+
+.icon {
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	background: $warm_gray;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+}
+
+.eye-icon {
+	-webkit-mask-image: url(../imgs/icons/eye-icon.svg);
+	mask-image: url(../imgs/icons/eye-icon.svg);
+}
+
+.lock-icon {
+	-webkit-mask-image: url(../imgs/icons/lock-icon.svg);
+	mask-image: url(../imgs/icons/lock-icon.svg);
+}
