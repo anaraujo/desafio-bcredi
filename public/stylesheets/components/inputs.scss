@@ -72,6 +72,10 @@
 		margin-right: 12px;
 	}
 
+	&:hover {
+		border-color: $main_blue;
+	}
+
 	&:checked {
 		background-color: $main_blue;
 		border-color: $main_blue;

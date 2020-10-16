@@ -1,3 +1,32 @@
+.main-button {
+  height: 56px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 3px;
+  border: none;
+  appearance: none;
+  background-color: #4c8afe;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s; }
+  @media (min-width: 900px) {
+    .main-button {
+      height: 48px; } }
+  .main-button .icon {
+    background-color: #fff;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 32px; }
+  .main-button:hover {
+    background-color: #1b6afe; }
+  .main-button:focus, .main-button:active {
+    outline: none;
+    background-color: #0151e4; }
+
 .input-wrapper {
   display: flex;
   flex-direction: column;
@@ -49,6 +78,8 @@
   @media (min-width: 900px) {
     .checkbox-input {
       margin-right: 12px; } }
+  .checkbox-input:hover {
+    border-color: #4c8afe; }
   .checkbox-input:checked {
     background-color: #4c8afe;
     border-color: #4c8afe; }
@@ -100,6 +131,11 @@ body {
     body .link-wrapper a {
       text-decoration: none;
       color: #4c8afe; }
+      body .link-wrapper a:hover {
+        color: #1b6afe; }
+      body .link-wrapper a:focus, body .link-wrapper a:active {
+        outline: none;
+        color: #0151e4; }
 
 body {
   margin: 0; }
@@ -207,30 +243,6 @@ body {
               body .register-page .form-section .form-wrapper form .privacy-policy {
                 margin-bottom: 40px;
                 padding: 8px 4px 8px 12px; } }
-          body .register-page .form-section .form-wrapper form button {
-            height: 56px;
-            width: 100%;
-            margin: 0 auto;
-            border-radius: 3px;
-            border: none;
-            appearance: none;
-            background-color: #4c8afe;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            position: relative;
-            cursor: pointer; }
-            @media (min-width: 900px) {
-              body .register-page .form-section .form-wrapper form button {
-                height: 48px; } }
-            body .register-page .form-section .form-wrapper form button .icon {
-              background-color: #fff;
-              position: absolute;
-              height: 100%;
-              top: 0;
-              left: 32px; }
-            body .register-page .form-section .form-wrapper form button:focus {
-              outline: none; }
         body .register-page .form-section .form-wrapper footer {
           border-top: 1px solid #e6e6e6;
           padding-top: 16px;

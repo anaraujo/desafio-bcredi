@@ -1,3 +1,4 @@
+@import 'components/buttons';
 @import 'components/inputs';
 
 @import 'shared/icons';
@@ -154,37 +155,6 @@ body {
 						@media (min-width: 900px) {
 							margin-bottom: 40px;
 							padding: 8px 4px 8px 12px;
-						}
-					}
-
-					button {
-						height: 56px;
-						width: 100%;
-						margin: 0 auto;
-						border-radius: 3px;
-						border: none;
-						appearance: none;
-						background-color: $main_blue;
-						font-size: 16px;
-						font-weight: bold;
-						color: $white;
-						position: relative;
-						cursor: pointer;
-
-						@media (min-width: 900px) {
-							height: 48px;
-						}
-
-						.icon {
-							background-color: $white;
-							position: absolute;
-							height: 100%;
-							top: 0;
-							left: 32px;
-						}
-
-						&:focus {
-							outline: none;
 						}
 					}
 				}

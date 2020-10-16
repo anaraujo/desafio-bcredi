@@ -27,6 +27,16 @@ body {
 		a {
 			text-decoration: none;
 			color: $main_blue;
+
+			&:hover {
+				color: $hover_blue;
+			}
+
+			&:focus,
+			&:active {
+				outline: none;
+				color: $focus_blue;
+			}
 		}
 	}
 }
