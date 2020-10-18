@@ -70,6 +70,7 @@ body {
 			display: flex;
 			flex-direction: column;
 			width: 100%;
+			min-width: 320px;
 
 			@media (min-width: 900px) {
 				width: 55%;

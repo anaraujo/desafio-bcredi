@@ -64,9 +64,9 @@ module.exports = ({ errors }) => {
                 
                                 <div class="input-wrapper">
                                     <label for="senha">Senha</label>
-                                    <div class="password-input">
-                                        <input type="text" id="password_input" name="senha" placeholder="Cadastre uma senha">
-                                        <i class="icon eye-icon"></i>
+                                    <div class="password-wrapper">
+                                        <input type="password" id="password_input" name="senha" placeholder="Cadastre uma senha">
+                                        <i id="password_toggle" class="icon eye-icon"></i>
                                     </div>
                                     ${getError(errors, 'senha')}
                                 </div>

@@ -5,10 +5,22 @@
 	flex-direction: column;
 	margin-bottom: 32px;
 
-	.password-input {
+	.password-wrapper {
 		position: relative;
 		display: flex;
 		flex-direction: column;
+
+		&.show .icon {
+			background-color: $main_blue;
+		}
+
+		input {
+			padding: 0 48px 0 16px;
+
+			@media (min-width: 900px) {
+				padding: 0 44px 0 14px;
+			}
+		}
 
 		.icon {
 			position: absolute;
@@ -16,6 +28,7 @@
 			width: 16px;
 			top: 0;
 			right: 16px;
+			cursor: pointer;
 		}
 	}
 
@@ -30,7 +43,7 @@
 		font-size: 16px;
 		border-radius: 3px;
 		border: solid 1px $lighter_gray;
-		padding: 0 48px 0 16px;
+		padding: 0 16px;
 		opacity: 0.4;
 		transition: all 0.3s;
 
