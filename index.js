@@ -1,35 +1,39 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const bodyParser = require('body-parser');
-const moment = require('moment');
+
+const mainTemplate = require('./views/template');
+
+const {
+	requireEmail,
+	requireCPF,
+	requireBirth,
+	requirePassword,
+	requirePolicy
+} = require('./public/scripts/validators');
 
 const app = express();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set( 'view engine', 'ejs');
-
 app.get('/', (req, res) => {
-	res.render('template');
+	res.send(mainTemplate({}));
 });
 
-app.post('/', [
-    check('email')
-        .trim()
-        .isEmail()
-        .normalizeEmail(),
-    check('cpf').isLength({ min: 14, max: 14 }),
-    check('data_nasc').custom((data_nasc) => moment(data_nasc, 'DD/MM/YYYY').isValid()),
-    check('senha').trim().isLength({ min: 6, max: 20 }),
-    check('politica_priv').equals('on')
-],(req, res) => {
-    const errors = validationResult(req);
-    console.log(errors);
+app.post(
+    '/', 
+    [ requireEmail, requireCPF, requireBirth, requirePassword, requirePolicy ],
+    (req, res) => {
+        const errors = validationResult(req);
 
-    const { email, cpf, data_nasc, senha, politica_priv } = req.body;
-	res.render('template');
-});
+        if(!errors.isEmpty()) {
+            res.send(mainTemplate({ errors }));
+        }
+        
+        res.send(mainTemplate({}));
+    }
+);
 
 app.listen(3000, () => {
 	console.log('Listening');
