@@ -1,7 +1,7 @@
 .main-button {
   height: 56px;
   width: 100%;
-  margin: 0 auto;
+  margin: 40px auto 0;
   border-radius: 3px;
   border: none;
   appearance: none;
@@ -27,10 +27,18 @@
     outline: none;
     background-color: #0151e4; }
 
+.error-msg {
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  font-size: 14px;
+  color: #ff5863; }
+
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 32px; }
+  margin-bottom: 32px;
+  position: relative; }
   .input-wrapper .password-wrapper {
     position: relative;
     display: flex;
@@ -196,7 +204,8 @@ body {
       body .register-page .form-section header {
         border-bottom: 1px solid #e6e6e6;
         padding: 20px 32px;
-        text-align: right; }
+        text-align: right;
+        position: relative; }
         @media (min-width: 900px) {
           body .register-page .form-section header {
             padding: 16px 32px; } }
@@ -204,6 +213,23 @@ body {
           height: 24px;
           width: 75px;
           object-fit: contain; }
+        body .register-page .form-section header .success-msg {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin-top: -100%;
+          height: 100%;
+          width: 100%;
+          background-color: #2ecc71;
+          color: #fff;
+          transition: all 1s 0s ease-in-out;
+          opacity: 0; }
+          body .register-page .form-section header .success-msg.show {
+            margin-top: 0;
+            opacity: 1; }
       body .register-page .form-section .form-wrapper {
         display: flex;
         flex-direction: column;
@@ -213,7 +239,7 @@ body {
         padding: 0 24px 32px; }
         @media (min-width: 900px) {
           body .register-page .form-section .form-wrapper {
-            max-width: 320px;
+            max-width: 350px;
             padding: 0 0 40px; } }
         body .register-page .form-section .form-wrapper form {
           display: flex;
@@ -240,18 +266,18 @@ body {
               column-gap: 24px; } }
           body .register-page .form-section .form-wrapper form .cpf-nasc .input-wrapper {
             grid-column: span 6; }
-          body .register-page .form-section .form-wrapper form .privacy-policy {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            border-radius: 3px;
-            border: solid 1px #e6e6e6;
-            padding: 16px;
-            color: #cccccc; }
-            @media (min-width: 900px) {
-              body .register-page .form-section .form-wrapper form .privacy-policy {
-                margin-bottom: 40px;
-                padding: 8px 4px 8px 12px; } }
+          body .register-page .form-section .form-wrapper form .policy-wrapper {
+            position: relative; }
+            body .register-page .form-section .form-wrapper form .policy-wrapper .privacy-policy {
+              display: flex;
+              align-items: center;
+              border-radius: 3px;
+              border: solid 1px #e6e6e6;
+              padding: 16px;
+              color: #cccccc; }
+              @media (min-width: 900px) {
+                body .register-page .form-section .form-wrapper form .policy-wrapper .privacy-policy {
+                  padding: 8px 4px 8px 12px; } }
         body .register-page .form-section .form-wrapper footer {
           border-top: 1px solid #e6e6e6;
           padding-top: 16px;

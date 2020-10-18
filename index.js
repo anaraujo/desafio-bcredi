@@ -31,7 +31,13 @@ app.post(
     [ requireEmail, requireCPF, requireBirth, requirePassword, requirePolicy ],
     handleErrors(mainTemplate),
     (req, res) => {
-        res.redirect(mainTemplate({}));
+        res.send(mainTemplate({
+            success: `
+                <div class="success-msg">
+                    <p>Parabéns! Cadastro realizado com sucesso!</p>
+                </div>
+            `
+        }));
     }
 );
 
