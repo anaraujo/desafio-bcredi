@@ -1,90 +1,49 @@
-<img src="./images/logo.sample.png" alt="Logo of the project" align="right">
-
 # Bcredi Front-end Challenge &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
 Solution for Bcredi's front-end challenge.
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
+To run this project locally on your machine, you just need to follow these two steps:
 
 ```shell
 npm i
 npm start
 ```
 
-Here you should say what actually happens when you execute the code above.
+After installing the dependencies, node will start a local server on port 3000 and watch for javascript and css changes. You can now access this application on your browser, at localhost:3000
+
+Alternatively, you can access the deployed version of this project at https://desafio-bcredi.herokuapp.com/
 
 ## Developing
 
 ### Built With
-List main libraries, frameworks used including versions (React, Angular etc...)
+This application doesn't use any frameworks, but it does run with Node.js. 
 
-### Prerequisites
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
+#### Libraries used
 
+- **express:** for request handling and application structure
+- **express-validator:** to validate form fields
+- **jQuery:** to facilitate DOM manipulation
+- **jQuery Mask Plugin**: to mask the CPF and birth date inputs
+- **Moment.js**: to validate the birth date field
+- **node-sass:** to compile Sass files
+- **nodemon:** to restart the server when the code changes
+- **sass-autoprefixer:** to ensure css cross-browser compatibility
+- **watchify:** to watch and recompile the bundle.js file when changes are made
 
-### Setting up Dev
-
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
-
-```shell
-git clone https://github.com/your/your-project.git
-cd your-project/
-packagemanager install
-```
-
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
-
-### Building
-
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
-
-```shell
-./configure
-make
-make install
-```
-
-Here again you should state what actually happens when the code above gets
-executed.
-
-### Deploying / Publishing
-give instructions on how to build and release a new version
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
-
-```shell
-packagemanager deploy your-project -s server.com -u username -p password
-```
-
-And again you'd need to tell what the previous code actually does.
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when using the project.
+**Mocha** and **SuperTest** are also used, but for testing purposes.
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
-Explain what these tests test and why.
+To test the application, simply run:
 
 ```shell
 npm test
 ```
 
+The code written will test the success or failure of the GET and POST requests, including cases where the user inputs information incorrectly on the registration form.
+
 ## Style guide
 
-Explain your code style and show how to check it.
-
-## Database
-
-Explaining what database (and version) has been used. Provide download links.
-Documents your database design and schemas, relations etc... 
-
-## Licensing
-
-State what the license is and how to find the text version of the license.
+This is a short application, so the style organization is very simple. Bigger components like inputs or the submit button are declared in separated files (in the *components* folder), design system items like typography and color variables are also in separated files (in the *shared* folder). The rest of the css is grouped in the main.scss file, as well as the import for all the others .scss files. 
