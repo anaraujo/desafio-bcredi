@@ -25,5 +25,10 @@
 		"jquery-mask-plugin": "^1.14.16",
 		"moment": "^2.29.1",
 		"sass-autoprefixer": "^1.0.1"
+	},
+	"engines": {
+		"node": "12.19.0",
+		"npm": "6.14.8"
 	}
+	  
 }
