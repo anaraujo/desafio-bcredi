@@ -3,6 +3,10 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"engines": {
+		"node": "12.18.3",
+		"npm": "6.14.6"
+	},
 	"scripts": {
 		"build-css": "node-sass --include-path scss public/stylesheets/main.scss public/stylesheets/main.css",
 		"watch-css": "nodemon -e scss -x 'npm run build-css'",
@@ -25,10 +29,5 @@
 		"jquery-mask-plugin": "^1.14.16",
 		"moment": "^2.29.1",
 		"sass-autoprefixer": "^1.0.1"
-	},
-	"engines": {
-		"node": "12.19.0",
-		"npm": "6.14.8"
-	}
-	  
+	} 
 }
