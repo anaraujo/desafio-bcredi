@@ -79,7 +79,8 @@
 
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.active {
 			opacity: 1;
 			outline: none;
 		}

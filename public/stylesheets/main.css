@@ -121,7 +121,7 @@
         padding: 0 14px; } }
     .input-wrapper input::-webkit-input-placeholder, .input-wrapper input::-moz-placeholder, .input-wrapper input:-ms-input-placeholder, .input-wrapper input:-moz-placeholder {
       color: #cccccc; }
-    .input-wrapper input:hover, .input-wrapper input:focus, .input-wrapper input:active {
+    .input-wrapper input:hover, .input-wrapper input:focus, .input-wrapper input:active, .input-wrapper input.active {
       opacity: 1;
       outline: none; }
 
