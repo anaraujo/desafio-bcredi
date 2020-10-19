@@ -8,7 +8,7 @@
 body {
 	margin: 0;
 
-	.register-page {
+	#register_page {
 		display: flex;
 
 		@media (min-width: 900px) {
@@ -163,23 +163,6 @@ body {
 
 						.input-wrapper {
 							grid-column: span 6;
-						}
-					}
-
-					.policy-wrapper {
-						position: relative;
-
-						.privacy-policy {
-							display: flex;
-							align-items: center;
-							border-radius: 3px;
-							border: solid 1px $lighter_gray;
-							padding: 16px;
-							color: $light_gray;
-
-							@media (min-width: 900px) {
-								padding: 8px 4px 8px 12px;
-							}
 						}
 					}
 				}

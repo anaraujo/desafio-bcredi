@@ -13,13 +13,13 @@ module.exports = {
         .notEmpty()
         .withMessage('Esse campo é obrigatório')
         .isLength({ min: 14, max: 14 })
-        .withMessage('Seu CPF deve ter 14 caracteres'),
+        .withMessage('Esse CPF não é válido'),
     requireBirth: check('data_nasc')
         .notEmpty()
         .withMessage('Esse campo é obrigatório')
         .custom((data_nasc) => {
             if (!moment(data_nasc, 'DD/MM/YYYY').isValid()) {
-                throw new Error('Essa não é uma data válida');
+                throw new Error('Essa data não é válida');
             }
             return true;
         }),

@@ -1,20 +1,6 @@
-const getError = (errors, prop) => {
-    try {
-        return errors.mapped()[prop].msg;
-    } catch (err) {
-        return '';
-    }
-};
+const { getError, getErrorClass, getInputValue, getSuccess } = require('../public/scripts/helpers');
 
-const getSuccess = (success) => {
-    if (success != undefined) { 
-       return success;
-    } else {
-        return '';
-    }
-};
-
-module.exports = ({ errors, success }) => {
+module.exports = ({ errors, inputValues, success }) => {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -33,7 +19,7 @@ module.exports = ({ errors, success }) => {
                 <title>Bcredi</title>
             </head>
             <body>
-                <main class="register-page">
+                <main id="register_page">
                     <section class="image-section">
                         <div class="shadow"></div>
                         <h2>"Obtive crédito para capital de giro. O processo foi bem sucedido e tudo que foi abordado, foi cumprido."</h2>
@@ -51,27 +37,27 @@ module.exports = ({ errors, success }) => {
                                 <h1 class="form-title">Criar meu cadastro</h1>
                                 <p class="form-description">Para acompanhar sua contratação de crédito você utilizará seu e-mail e CPF.</p>
                 
-                                <div class="input-wrapper">
+                                <div class="input-wrapper ${getErrorClass(errors, 'email')}">
                                     <label for="email">E-mail</label>
-                                    <input type="text" id="email_input" name="email" placeholder="ana.maria@email.com">
+                                    <input type="text" id="email_input" name="email" placeholder="ana.maria@email.com" value="${getInputValue(inputValues, 'email')}">
                                     <p class="error-msg">${getError(errors, 'email')}</p>
                                 </div>
 
                                 <div class="cpf-nasc">
-                                    <div class="input-wrapper">
+                                    <div class="input-wrapper ${getErrorClass(errors, 'cpf')}">
                                         <label for="cpf">CPF</label>
-                                        <input type="text" id="cpf_input" name="cpf" placeholder="000.000.000-00">
+                                        <input type="text" id="cpf_input" name="cpf" placeholder="000.000.000-00" value="${getInputValue(inputValues, 'cpf')}">
                                         <p class="error-msg">${getError(errors, 'cpf')}</p>
                                     </div>
                     
-                                    <div class="input-wrapper">
+                                    <div class="input-wrapper ${getErrorClass(errors, 'data_nasc')}">
                                         <label for="data_nasc">Data de nascimento</label>
-                                        <input type="text" id="birth_input" name="data_nasc" placeholder="DD/MM/AAAA">
+                                        <input type="text" id="birth_input" name="data_nasc" placeholder="DD/MM/AAAA" value="${getInputValue(inputValues, 'data_nasc')}">
                                         <p class="error-msg">${getError(errors, 'data_nasc')}</p>
                                     </div>
                                 </div>
                 
-                                <div class="input-wrapper">
+                                <div class="input-wrapper ${getErrorClass(errors, 'senha')}">
                                     <label for="senha">Senha</label>
                                     <div class="password-wrapper">
                                         <input type="password" id="password_input" name="senha" placeholder="Cadastre uma senha">
@@ -80,7 +66,7 @@ module.exports = ({ errors, success }) => {
                                     <p class="error-msg">${getError(errors, 'senha')}</p>
                                 </div>
                 
-                                <div class="policy-wrapper">
+                                <div class="policy-wrapper ${getErrorClass(errors, 'politica_priv')}">
                                     <div class="privacy-policy">
                                         <input type="checkbox" id="policy_input" class="checkbox-input" name="politica_priv">
                                         <p class="link-wrapper">Li e estou de acordo com a <a href="#">Política de Privacidade</a> e a <a href="#">Política de Uso de Informações</a>.</small>

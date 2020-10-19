@@ -19,7 +19,7 @@ const handleErrors = (templateFunc) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-            return res.send(mainTemplate({ errors }));
+            return res.send(mainTemplate({ errors, inputValues: req.body }));
         }
 
         next();
