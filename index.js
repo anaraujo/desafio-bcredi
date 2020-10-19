@@ -19,9 +19,8 @@ const handleErrors = (templateFunc) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-            return res.send(mainTemplate({ errors, inputValues: req.body }));
+            return res.status(400).send(mainTemplate({ errors, inputValues: req.body }));
         }
-
         next();
     };
 };
@@ -44,3 +43,5 @@ app.post(
 app.listen(process.env.PORT || 3000, function() {
 	console.log('Listening');
 });
+
+module.exports = app;
