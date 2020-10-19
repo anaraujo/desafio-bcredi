@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 3000
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
@@ -41,6 +43,6 @@ app.post(
     }
 );
 
-app.listen(3000, () => {
+app.listen(PORT, process.env.IP, function() {
 	console.log('Listening');
 });

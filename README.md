@@ -10,7 +10,8 @@ A quick introduction of the minimal setup you need to get a hello world up &
 running.
 
 ```shell
-commands here
+npm i
+npm start
 ```
 
 Here you should say what actually happens when you execute the code above.
@@ -72,7 +73,7 @@ Describe and show how to run the tests with code examples.
 Explain what these tests test and why.
 
 ```shell
-Give an example
+npm test
 ```
 
 ## Style guide
