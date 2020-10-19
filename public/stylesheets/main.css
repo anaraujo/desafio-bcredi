@@ -449,7 +449,8 @@ body {
               grid-template-columns: repeat(12, 1fr); } }
           body #register_page .form-section .form-wrapper form .cpf-nasc .input-wrapper {
             -ms-grid-column-span: span 6;
-            grid-column: span 6; }
+            grid-column: span 6;
+            min-width: 0; }
         body #register_page .form-section .form-wrapper footer {
           border-top: 1px solid #e6e6e6;
           padding-top: 16px;

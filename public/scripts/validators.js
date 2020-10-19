@@ -18,7 +18,7 @@ module.exports = {
         .notEmpty()
         .withMessage('Esse campo é obrigatório')
         .custom((data_nasc) => {
-            if (!moment(data_nasc, 'DD/MM/YYYY').isValid()) {
+            if (!moment(data_nasc, 'DD/MM/YYYY', true).isValid()) {
                 throw new Error('Essa data não é válida');
             }
             return true;

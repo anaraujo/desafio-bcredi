@@ -173,6 +173,8 @@ body {
 
 						.input-wrapper {
 							@include p-grid-column(span 6);
+
+							min-width: 0;
 						}
 					}
 				}
