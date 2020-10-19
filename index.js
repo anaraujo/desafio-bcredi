@@ -1,5 +1,3 @@
-const PORT = process.env.PORT || 3000
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
@@ -9,7 +7,7 @@ const { requireEmail, requireCPF, requireBirth, requirePassword, requirePolicy }
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
@@ -43,6 +41,6 @@ app.post(
     }
 );
 
-app.listen(PORT, process.env.IP, function() {
+app.listen(process.env.PORT || 3000, function() {
 	console.log('Listening');
 });
