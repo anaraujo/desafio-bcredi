@@ -23,6 +23,7 @@
 		"express-validator": "^6.6.1",
 		"jquery": "^3.5.1",
 		"jquery-mask-plugin": "^1.14.16",
-		"moment": "^2.29.1"
+		"moment": "^2.29.1",
+		"sass-autoprefixer": "^1.0.1"
 	}
 }

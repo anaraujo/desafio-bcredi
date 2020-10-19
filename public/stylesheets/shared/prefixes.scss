@@ -1,0 +1,68 @@
+@import "../../../node_modules/sass-autoprefixer/scss/prefixes";
+
+// Grid
+
+@mixin p-display($value) {
+	@if $enable-autoprefixer {
+		@if $value == grid {
+			display: -ms-grid;
+			display: grid;
+		}
+	} @else {
+		display: $value;
+	}
+}
+
+@mixin p-column-gap($value) {
+	@if $enable-autoprefixer {
+		-webkit-column-gap: $value;
+		-moz-column-gap: $value;
+	}
+	column-gap: $value;
+}
+
+@mixin p-grid-column($value) {
+	@if $enable-autoprefixer {
+		-ms-grid-column-span: $value;
+	}
+	grid-column: $value;
+}
+
+// Mask
+
+@mixin p-mask-size($value) {
+	@if $enable-autoprefixer {
+		-webkit-mask-size: $value;
+	}
+	mask-size: $value;
+}
+
+@mixin p-mask-repeat($value) {
+	@if $enable-autoprefixer {
+		-webkit-mask-repeat: $value;
+	}
+	mask-repeat: $value;
+}
+
+@mixin p-mask-position($value) {
+	@if $enable-autoprefixer {
+		-webkit-mask-position: $value;
+	}
+	mask-position: $value;
+}
+
+@mixin p-mask-image($value) {
+	@if $enable-autoprefixer {
+		-webkit-mask-image: $value;
+	}
+	mask-image: $value;
+}
+
+// Object Fit
+
+@mixin p-object-fit($value) {
+	@if $enable-autoprefixer {
+		-o-object-fit: $value;
+	}
+	object-fit: $value;
+}

@@ -1,17 +1,31 @@
+/*
+ * Mixin printing a linear-gradient
+ * as well as a plain color fallback
+ * and the `-webkit-` prefixed declaration
+ * @access public
+ * @param {Keyword | Angle} $direction - Linear gradient direction
+ * @param {Arglist} $color-stops - List of color-stops composing the gradient
+ *
+ * @see https://www.sitepoint.com/building-linear-gradient-mixin-sass/
+ */
 .main-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   height: 56px;
   width: 100%;
   margin: 40px auto 0;
   border-radius: 3px;
   border: none;
-  appearance: none;
   background-color: #4c8afe;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
   position: relative;
-  cursor: pointer;
-  transition: all 0.2s; }
+  cursor: pointer; }
   @media (min-width: 900px) {
     .main-button {
       height: 48px; } }
@@ -27,6 +41,16 @@
     outline: none;
     background-color: #0151e4; }
 
+/*
+ * Mixin printing a linear-gradient
+ * as well as a plain color fallback
+ * and the `-webkit-` prefixed declaration
+ * @access public
+ * @param {Keyword | Angle} $direction - Linear gradient direction
+ * @param {Arglist} $color-stops - List of color-stops composing the gradient
+ *
+ * @see https://www.sitepoint.com/building-linear-gradient-mixin-sass/
+ */
 .error-msg {
   position: absolute;
   bottom: -22px;
@@ -35,16 +59,34 @@
   color: #ff5863; }
 
 .input-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 32px;
   position: relative; }
   .input-wrapper.has-error input {
     border-color: #ff5863; }
   .input-wrapper .password-wrapper {
-    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column; }
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative; }
     .input-wrapper .password-wrapper.show .icon {
       background-color: #4c8afe; }
     .input-wrapper .password-wrapper input {
@@ -64,13 +106,15 @@
     font-size: 14px;
     color: #8f8f8f; }
   .input-wrapper input {
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
     height: 56px;
     font-size: 16px;
     border-radius: 3px;
     border: solid 1px #e6e6e6;
     padding: 0 16px;
-    opacity: 0.4;
-    transition: all 0.3s; }
+    opacity: 0.4; }
     @media (min-width: 900px) {
       .input-wrapper input {
         height: 48px;
@@ -86,7 +130,15 @@
   .policy-wrapper.has-error .privacy-policy {
     border-color: #ff5863; }
   .policy-wrapper .privacy-policy {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
     align-items: center;
     border-radius: 3px;
     border: solid 1px #e6e6e6;
@@ -96,6 +148,12 @@
       .policy-wrapper .privacy-policy {
         padding: 8px 4px 8px 12px; } }
     .policy-wrapper .privacy-policy .checkbox-input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
       position: relative;
       height: 24px;
       width: 24px;
@@ -103,9 +161,7 @@
       margin: 0 16px 0 0;
       border-radius: 4px;
       border: solid 1px #e6e6e6;
-      appearance: none;
       outline: none;
-      transition: all 0.3s;
       cursor: pointer; }
       @media (min-width: 900px) {
         .policy-wrapper .privacy-policy .checkbox-input {
@@ -124,17 +180,27 @@
         height: 100%;
         width: 100%; }
 
+/*
+ * Mixin printing a linear-gradient
+ * as well as a plain color fallback
+ * and the `-webkit-` prefixed declaration
+ * @access public
+ * @param {Keyword | Angle} $direction - Linear gradient direction
+ * @param {Arglist} $color-stops - List of color-stops composing the gradient
+ *
+ * @see https://www.sitepoint.com/building-linear-gradient-mixin-sass/
+ */
 .icon {
-  display: inline-block;
-  height: 12px;
-  width: 12px;
-  background: #8f8f8f;
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  mask-position: center; }
+  mask-position: center;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background: #8f8f8f; }
 
 .eye-icon {
   -webkit-mask-image: url(../imgs/icons/eye-icon.svg);
@@ -144,6 +210,16 @@
   -webkit-mask-image: url(../imgs/icons/lock-icon.svg);
   mask-image: url(../imgs/icons/lock-icon.svg); }
 
+/*
+ * Mixin printing a linear-gradient
+ * as well as a plain color fallback
+ * and the `-webkit-` prefixed declaration
+ * @access public
+ * @param {Keyword | Angle} $direction - Linear gradient direction
+ * @param {Arglist} $color-stops - List of color-stops composing the gradient
+ *
+ * @see https://www.sitepoint.com/building-linear-gradient-mixin-sass/
+ */
 body {
   font-family: Arial, sans-serif; }
   body h1 {
@@ -169,18 +245,49 @@ body {
         outline: none;
         color: #0151e4; }
 
+/*
+ * Mixin printing a linear-gradient
+ * as well as a plain color fallback
+ * and the `-webkit-` prefixed declaration
+ * @access public
+ * @param {Keyword | Angle} $direction - Linear gradient direction
+ * @param {Arglist} $color-stops - List of color-stops composing the gradient
+ *
+ * @see https://www.sitepoint.com/building-linear-gradient-mixin-sass/
+ */
 body {
   margin: 0; }
   body #register_page {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex; }
     @media (min-width: 900px) {
       body #register_page {
         height: 100vh;
         min-height: 750px; } }
     body #register_page .image-section {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
       flex-direction: column;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      -webkit-align-items: flex-end;
+      -moz-align-items: flex-end;
       align-items: flex-end;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      -webkit-justify-content: flex-end;
+      -moz-justify-content: flex-end;
       justify-content: flex-end;
       text-align: right;
       width: 45%;
@@ -203,14 +310,26 @@ body {
         margin-bottom: 4px;
         font-weight: bold; }
       body #register_page .image-section .shadow {
+        background: rgba(0, 0, 0, 0.2);
+        background: -webkit-linear-gradient(90deg-to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.5) 69%, rgba(0, 0, 0, 0.8) 96%);
+        background: -o-linear-gradient(90deg-to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.5) 69%, rgba(0, 0, 0, 0.8) 96%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.5) 69%, rgba(0, 0, 0, 0.8) 96%);
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
-        width: 100%;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 16%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.5) 69%, rgba(0, 0, 0, 0.8) 96%); }
+        width: 100%; }
     body #register_page .form-section {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
       flex-direction: column;
       width: 100%;
       min-width: 320px; }
@@ -226,13 +345,29 @@ body {
           body #register_page .form-section header {
             padding: 16px 32px; } }
         body #register_page .form-section header img {
+          -o-object-fit: contain;
+          object-fit: contain;
           height: 24px;
-          width: 75px;
-          object-fit: contain; }
+          width: 75px; }
         body #register_page .form-section header .success-msg {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          -moz-align-items: center;
           align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          -moz-justify-content: center;
           justify-content: center;
+          -webkit-transition: all 1s 0s ease-in-out;
+          -o-transition: all 1s 0s ease-in-out;
+          transition: all 1s 0s ease-in-out;
           position: absolute;
           top: 0;
           left: 0;
@@ -241,14 +376,25 @@ body {
           width: 100%;
           background-color: #2ecc71;
           color: #fff;
-          transition: all 1s 0s ease-in-out;
           opacity: 0; }
           body #register_page .form-section header .success-msg.show {
             margin-top: 0;
             opacity: 1; }
       body #register_page .form-section .form-wrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-align-self: center;
+        -moz-align-self: center;
+        -ms-flex-item-align: center;
         align-self: center;
         height: 100%;
         max-width: 560px;
@@ -258,9 +404,26 @@ body {
             max-width: 350px;
             padding: 0 0 40px; } }
         body #register_page .form-section .form-wrapper form {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-direction: normal;
+          -webkit-box-orient: vertical;
+          -webkit-flex-direction: column;
+          -moz-flex-direction: column;
+          -ms-flex-direction: column;
           flex-direction: column;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          -moz-justify-content: center;
           justify-content: center;
+          -webkit-box-flex: 1;
+          -webkit-flex-grow: 1;
+          -moz-flex-grow: 1;
+          -ms-flex-positive: 1;
           flex-grow: 1;
           padding: 80px 0; }
           @media (min-width: 900px) {
@@ -277,10 +440,15 @@ body {
             color: #8f8f8f; }
           @media (min-width: 900px) {
             body #register_page .form-section .form-wrapper form .cpf-nasc {
+              display: -ms-grid;
               display: grid;
-              grid-template-columns: repeat(12, 1fr);
-              column-gap: 24px; } }
+              -webkit-column-gap: 24px;
+              -moz-column-gap: 24px;
+              column-gap: 24px;
+              -ms-grid-columns: 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr;
+              grid-template-columns: repeat(12, 1fr); } }
           body #register_page .form-section .form-wrapper form .cpf-nasc .input-wrapper {
+            -ms-grid-column-span: span 6;
             grid-column: span 6; }
         body #register_page .form-section .form-wrapper footer {
           border-top: 1px solid #e6e6e6;

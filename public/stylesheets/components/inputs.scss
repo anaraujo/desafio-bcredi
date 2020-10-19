@@ -1,5 +1,7 @@
 @import '../shared/variables';
 
+@import "../../../node_modules/sass-autoprefixer/scss/prefixes";
+
 .error-msg {
 	position: absolute;
 	bottom: -22px;
@@ -9,8 +11,9 @@
 }
 
 .input-wrapper {
-	display: flex;
-	flex-direction: column;
+	@include vp-display(flex);
+	@include vp-flex-direction(column);
+
 	margin-bottom: 32px;
 	position: relative;
 
@@ -19,9 +22,10 @@
 	}
 
 	.password-wrapper {
+		@include vp-display(flex);
+		@include vp-flex-direction(column);
+
 		position: relative;
-		display: flex;
-		flex-direction: column;
 
 		&.show .icon {
 			background-color: $main_blue;
@@ -52,13 +56,14 @@
 	}
 
 	input {
+		@include vp-transition(all 0.3s);
+
 		height: 56px;
 		font-size: 16px;
 		border-radius: 3px;
 		border: solid 1px $lighter_gray;
 		padding: 0 16px;
 		opacity: 0.4;
-		transition: all 0.3s;
 
 		@media (min-width: 900px) {
 			height: 48px;
@@ -89,8 +94,9 @@
 	}
 
 	.privacy-policy {
-		display: flex;
-		align-items: center;
+		@include vp-display(flex);
+		@include vp-align-items(center);
+
 		border-radius: 3px;
 		border: solid 1px $lighter_gray;
 		padding: 16px;
@@ -101,6 +107,9 @@
 		}
 
 		.checkbox-input {
+			@include vp-appearance(none);
+			@include vp-transition(all 0.3s);
+
 			position: relative;
 			height: 24px;
 			width: 24px;
@@ -108,9 +117,7 @@
 			margin: 0 16px 0 0;
 			border-radius: 4px;
 			border: solid 1px $lighter_gray;
-			appearance: none;
 			outline: none;
-			transition: all 0.3s;
 			cursor: pointer;
 
 			@media (min-width: 900px) {

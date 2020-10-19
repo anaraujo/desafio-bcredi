@@ -1,19 +1,22 @@
 @import '../shared/variables';
 
+@import "../../../node_modules/sass-autoprefixer/scss/prefixes";
+
 .main-button {
+	@include vp-appearance(none);
+	@include vp-transition(all 0.2s);
+
 	height: 56px;
 	width: 100%;
 	margin: 40px auto 0;
 	border-radius: 3px;
 	border: none;
-	appearance: none;
 	background-color: $main_blue;
 	font-size: 16px;
 	font-weight: bold;
 	color: $white;
 	position: relative;
 	cursor: pointer;
-	transition: all 0.2s;
 
 	@media (min-width: 900px) {
 		height: 48px;
