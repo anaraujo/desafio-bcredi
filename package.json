@@ -7,7 +7,7 @@
 		"build-css": "node-sass --include-path scss public/stylesheets/main.scss public/stylesheets/main.css",
 		"watch-css": "nodemon -e scss -x 'npm run build-css'",
 		"watch-code": "nodemon index.js & watchify public/scripts/main.js -o public/scripts/bundle.js -v",
-		"start": "npm run watch-code & npm run watch-css",
+		"start": "npm install & npm run watch-code & npm run watch-css",
 		"test": "mocha"
 	},
 	"author": "",
